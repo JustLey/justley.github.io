@@ -1,5 +1,223 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><title>Rian Provesano Reis</title><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css><style>html,
-    body {
-        height: 100%;
-        margin-top: 0px;
-    }</style><link href=/static/css/app.32955466afe8f8b62e9f5aee16cd5e2e.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.7df2a91b8d4d9f8ad5e9.js></script><script type=text/javascript src=/static/js/vendor.e11a6a4dbc02a5e020d3.js></script><script type=text/javascript src=/static/js/app.11dac11985d93903db45.js></script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio | Rian Provesano Reis</title>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+ <div id="app" >
+  <v-app light>    
+    <v-content class="grey lighten-3">
+      <v-parallax src="https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/drop.jpg" height="165" style="filter: blur(20) opacity(.3);">
+        <v-layout column align-center justify-center>
+          <h1 class="white--text">EGC5009 - Geração de Idéias e Criatividade</h1>
+          <h4 class="white--text">Portfolio da Disciplina</h4>
+        </v-layout>
+      </v-parallax>
+      <v-container>
+        <v-layout row wrap align-center>
+            <v-layout row justify-center>
+                <v-dialog v-model="anyPostSelected" fullscreen hide-overlay transition="dialog-bottom-transition">
+                  <v-card>
+                    <v-toolbar dark color="primary">
+                      <v-btn icon dark @click.native="anyPostSelected = false">
+                        <v-icon>close</v-icon>
+                      </v-btn>
+                      <v-toolbar-title>{{ this.selectedPost.title }}</v-toolbar-title>
+                      <v-spacer></v-spacer>
+                    </v-toolbar>
+                    <v-carousel>
+                      <v-carousel-item v-for="(item,i) in selectedPost.pics" :src="item.src" :key="i"></v-carousel-item>
+                    </v-carousel>
+                    <v-list three-line subheader>
+                      <v-subheader>Resumo</v-subheader>
+                      <v-list-tile avatar>
+                        <v-list-tile-content>
+                          <v-list-tile-title>Descrição</v-list-tile-title>
+                          <v-list-tile-sub-title>{{ selectedPost.desc }}</v-list-tile-sub-title>
+                        </v-list-tile-content>
+                      </v-list-tile>
+                      <v-list-tile avatar>
+                        <v-list-tile-content>
+                          <v-list-tile-title>Resultado</v-list-tile-title>
+                          <v-list-tile-sub-title>{{ selectedPost.outcome }}</v-list-tile-sub-title>
+                        </v-list-tile-content>
+                      </v-list-tile>
+                    </v-list>
+                    <v-divider></v-divider>
+                  </v-card>
+                </v-dialog>
+              </v-layout>
+          <!-- Dialog End -->
+          <!-- Left Start -->
+          <v-flex xs12 md5>
+            <div class="text-xs-center">
+                <v-card class="my-3" hover>
+                    <v-card-media
+                      class="white--text"
+                      height="400px"
+                      src="https://secure.gravatar.com/avatar/8b15c30f451ceedfcafa7c9a9d1687f5?s=512"
+                    >
+                      <v-container fill-height fluid>
+                        <v-layout>
+                          <v-flex xs12 d-flex>
+                            <span class="headline"></span>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+                    </v-card-media>
+                    <v-card-title primary-title>
+                        <div>
+                          <v-subheader>Testemunho</v-subheader>
+                        </div>
+                      </v-card-title>
+                    <v-card-text>          
+                    </v-card-text>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn href="https://github.com/JustLey/" icon class="black--text">
+                        <v-icon medium>fa-github</v-icon>
+                      </v-btn>
+                      <v-btn href="https://www.linkedin.com/in/rian-provesano-reis-431a9932/" icon class="light-blue--text">
+                        <v-icon medium>fa-linkedin</v-icon>
+                      </v-btn>
+                      <v-btn href="https://www.facebook.com/rian.provesanoreis" icon class="blue--text text--darken-4">
+                        <v-icon medium>fa-facebook</v-icon>
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>        
+                  <!--        
+              <v-avatar size="125px">
+                <img
+                  class="img-circle elevation-7 mb-1"
+                  src="https://secure.gravatar.com/avatar/8b15c30f451ceedfcafa7c9a9d1687f5?s=128"
+                >
+              </v-avatar>
+              <div class="headline">{{ author.name }}</div>
+              <div class="subheading text-xs-center grey--text pt-1 pb-3">{{ author.desc }}
+              </div>
+              <v-layout justify-space-between>
+                <v-btn icon class="black--text">
+                  <v-icon medium>fa-github</v-icon>
+                </v-btn>
+                <v-btn icon class="light-blue--text">
+                  <v-icon medium>fa-linkedin</v-icon>
+                </v-btn>
+                <v-btn icon class="blue--text text--darken-4">
+                  <v-icon medium>fa-facebook</v-icon>
+                </v-btn>
+              </v-layout>-->
+            </div>
+          </v-flex>
+          <v-flex xs12 md5 offset-md2>
+            <div v-for="(post, index) in posts" :key="post.title">
+              <v-card class="my-3" hover>
+                <v-card-media
+                  class="white--text"
+                  height="170px"
+                  :src="post.imgUrl"
+                >
+                  <v-container fill-height fluid>
+                    <v-layout>
+                      <v-flex xs12 d-flex>
+                        <span class="headline">{{ post.title }}</span>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+                </v-card-media>
+                <v-card-text>
+                  {{ post.brief }}           
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn @click.native="selectPost(index)" flat class="blue--text">Sobre</v-btn>
+                </v-card-actions>
+              </v-card>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-content>
+    <v-footer class="secondary" app>
+      <v-layout row wrap align-center>
+        <v-flex xs12>
+          <div class="white--text ml-3">
+            Desenvolvido com
+            <v-icon class="red--text">favorite</v-icon>
+            por {{ author.name }} utilizando <a class="white--text" href="https://vuejs.org" target="_blank">Vue</a>
+            e <a class="white--text" href="https://vuetifyjs.com" target="_blank">Vuetify</a>
+          </div>
+        </v-flex>
+      </v-layout>
+    </v-footer>
+  </v-app>
+ </div>
+
+ <script src="https://unpkg.com/vue/dist/vue.js"></script>
+ <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+ <script src="https://use.fontawesome.com/73c8e2621d.js"></script>
+ <script>
+   new Vue({
+    el: '#app',
+    data () {
+      return {
+        anyPostSelected: false,
+        selectedPost: {},
+        author: {
+          name: "Rian Provesano Reis",
+          desc: "Graduando em Sistemas de Informação",
+          testimony: "To be written",
+          socialNetworks: [
+            { name: "github", link: "tbd", color: "" },
+            { name: "linkedin", link: "tbd", color: "" },
+            { name: "facebook", link: "tbd", color: "" }
+          ]
+        },
+        posts: [
+          {
+            title: 'Torre de Macarrão',
+            brief: 'Dinâmica realizada em grupo com foco no estudo em After Action Review',
+            desc: 'A dinâmica propunha o agrupamento de alunos para a construção de uma torre de macarrão contendo um MarshMallow em sua extremidade mais alta. A proposta era realizar um planejamento inicial com relação as ações a serem tomadas para realizar a tarefa (construção, divisão de tarefas, planejamento estrutural para alcance da maior altura, estabilidade, etc) e uma posterior revisão de tal planejamento com a finalidade de verificar o alcance dos objetivos e aprender lições sobre os objetivos não alcançados (técnica AAR - After Action Review).',
+            imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/drop.jpg',
+            outcome: 'O grupo do qual fiz parte cumpriu o objetivo, apesar de não ter montado a torre mais alta :(',
+            tags: '',
+            pics: [
+              
+            ]
+          },
+          {
+            title: 'Seminários de Técnicas Criativas',
+            brief: "",
+            desc: 'Donec vitae suscipit lectus, a luctus diam. Proin vitae felis gravida, lobortis massa sit amet, efficitur erat. Morbi vel ultrices nisi.',
+            imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/docks.jpg',
+            tags: "",
+            pics: []
+          },
+          {
+            title: 'Elaboração de Pitch de Produto',
+            brief: "",
+            desc: 'At sagittis sapien vulputate. Vivamus laoreet lacus id magna rutrum dapibus. Donec vel pellentesque arcu. Maecenas mollis odio tempus felis elementum commodo.',
+            imgUrl: 'https://raw.githubusercontent.com/vuetifyjs/docs/dev/static/doc-images/cards/plane.jpg',
+            tags: "",
+            pics: []
+          }
+        ]
+      }
+    },
+    methods: {
+      selectPost: function(post) {
+        console.log(post);
+        this.anyPostSelected = true;
+        this.selectedPost = this.posts[post];
+      },
+      closeDialog: function() {
+        this.selectedPost = {};
+      }
+    }
+  })
+ </script>
+</body>
+</html>
