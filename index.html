@@ -29,7 +29,7 @@
                       <v-toolbar-title>{{ this.selectedPost.title }}</v-toolbar-title>
                       <v-spacer></v-spacer>
                     </v-toolbar>
-                    <v-carousel cycle>
+                    <v-carousel cycle interval="3000">
                       <v-carousel-item v-for="(item,i) in selectedPost.pics" :src="item.src" :key="i">
                       </v-carousel-item>
                     </v-carousel>
@@ -43,7 +43,7 @@
                       </v-list-tile>
                       <v-list-tile avatar>
                         <v-list-tile-content>
-                          <v-list-tile-title>Resultado</v-list-tile-title>
+                          <v-list-tile-title>Resultado para o Discente</v-list-tile-title>
                           <v-list-tile-sub-title>{{ selectedPost.outcome }}</v-list-tile-sub-title>
                         </v-list-tile-content>
                       </v-list-tile>
@@ -183,7 +183,7 @@
             brief: 'Dinâmica realizada em grupo com foco no estudo em After Action Review',
             desc: 'A dinâmica propunha o agrupamento de alunos para a construção de uma torre de macarrão contendo um MarshMallow em sua extremidade mais alta. A proposta era realizar um planejamento inicial com relação as ações a serem tomadas para realizar a tarefa (construção, divisão de tarefas, planejamento estrutural para alcance da maior altura, estabilidade, etc) e uma posterior revisão de tal planejamento com a finalidade de verificar o alcance dos objetivos e aprender lições sobre os objetivos não alcançados (técnica AAR - After Action Review).',
             imgUrl: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/torre1.jpg',
-            outcome: 'O grupo do qual fiz parte cumpriu o objetivo, apesar de não ter montado a torre mais alta :(',
+            outcome: 'A aplicação e aprendizagem sobre a técnica AAR foram de extrema utilidade. O grupo do qual fiz parte cumpriu o objetivo, apesar de não ter montado a torre mais alta :(',
             pics: [
               { src: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/torre1.jpg' },
               { src: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/torre2.jpg' },
@@ -192,10 +192,10 @@
           },
           {
             title: 'Seminários de Técnicas Criativas',
-            brief: 'Dinâmica realizada em grupo com foco no estudo em After Action Review',
-            desc: 'Donec vitae suscipit lectus, a luctus diam. Proin vitae felis gravida, lobortis massa sit amet, efficitur erat. Morbi vel ultrices nisi.',
+            brief: 'Sequência de seminários sobre diversas técnicas de criatividade',
+            desc: 'As apresentações de técnicas de criativas constituiram-se de seminários realizados em conjunto com dinâmicas, envolvendo tanto teoria quanto prática. Os temas abordados foram diversos, desde espírito criativo a técnicas aplicadas como SCMAPER',
             imgUrl: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/semi1.png',
-            outcome: 'O grupo do qual fiz parte cumpriu o objetivo, apesar de não ter montado a torre mais alta :(',
+            outcome: 'Os seminários cobriram tanto tópicos conhecidos como desconhecidos para mim, porém o fato de haver dinâmica garantiu a validade da abordagem de ensino, tanto para aprendizado de técnicas novas quanto para fixação das conhecidas anteriormente',
             pics: [
               { src: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/semi1.png' },
               { src: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/semi2.jpg' },
@@ -204,10 +204,10 @@
           },
           {
             title: 'Elaboração de Pitch de Produto',
-            brief: 'Dinâmica realizada em grupo com foco no estudo em After Action Review',
-            desc: 'At sagittis sapien vulputate. Vivamus laoreet lacus id magna rutrum dapibus. Donec vel pellentesque arcu. Maecenas mollis odio tempus felis elementum commodo.',
+            brief: 'Desenvolvimento de idéia e produto através de storytelling, BMC e modelagem de negócio',
+            desc: 'A abordagem sobre o tema constituiu-se de duas etapas: explicação e fundamento teórico sobre desenvolvimento de pitch de produto e desenvolvimento em grupo de produto para pitch',
             imgUrl: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/pitch1.png',
-            outcome: 'O grupo do qual fiz parte cumpriu o objetivo, apesar de não ter montado a torre mais alta :(',
+            outcome: 'Apesar de conhecer a técnica e já ter elaborado pitches, é uma atividade que me agrada e portanto foi interessante ter a oportunidade de criar mais um partindo de uma nova idéia.',
             pics: [
               { src: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/pitch1.png' },
               { src: 'https://raw.githubusercontent.com/JustLey/justley.github.io/master/assets/pitch2.png' },
